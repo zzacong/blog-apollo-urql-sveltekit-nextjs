@@ -14,11 +14,11 @@ const config = {
 			resolve: {
 				alias: {
 					$styles: resolve('./src/styles'),
-					$components: resolve('./src/components')
-				}
-			}
-		}
-	}
+					$components: resolve('./src/components'),
+				},
+			},
+		},
+	},
 };
 
 export default config;

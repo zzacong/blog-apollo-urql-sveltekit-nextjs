@@ -4,8 +4,11 @@
   "description": "",
   "scripts": {
     "dev:server": "pnpm --dir server dev",
+    "dev:generate": "wait-on http://localhost:4000 && graphql-codegen --watch",
     "dev:client": "wait-on http://localhost:4000 && pnpm --dir client dev --open",
-    "dev": "cross-env FORCE_COLOR=1 run-p -l -p dev:*"
+    "dev": "cross-env FORCE_COLOR=1 run-p -l -p dev:*",
+    "generate": "graphql-codegen",
+    "generate:watch": "graphql-codegen --watch"
   },
   "keywords": [],
   "author": {
@@ -14,8 +17,20 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/named-operations-object": "^2.2.1",
+    "@graphql-codegen/typescript": "2.4.8",
+    "@graphql-codegen/typescript-operations": "2.3.5",
+    "@graphql-codegen/typescript-urql": "^3.5.7",
+    "@graphql-codegen/urql-introspection": "2.1.1",
+    "@graphql-codegen/urql-svelte-operations-store": "^1.1.15",
+    "@urql/exchange-graphcache": "^4.3.6",
     "cross-env": "^7.0.3",
+    "graphql": "^15",
+    "graphql-tag": "^2.12.6",
     "npm-run-all": "^4.1.5",
+    "typescript": "^4.6.3",
     "wait-on": "^6.0.1"
   }
 }

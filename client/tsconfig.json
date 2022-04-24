@@ -12,6 +12,16 @@
 		"skipLibCheck": true,
 		"sourceMap": true,
 		"strict": true,
-		"target": "es2020"
-	}
+		"target": "es2020",
+		"baseUrl": ".",
+		"paths": {
+			"$components": ["src/components"],
+			"$components/*": ["src/components/*"],
+			"$public": ["src/public"],
+			"$public/*": ["src/public/*"],
+			"$styles": ["src/styles"],
+			"$styles/*": ["src/styles/*"]
+		}
+	},
+	"exclude": ["src/generated"]
 }

@@ -5,10 +5,13 @@ specifiers:
   '@sveltejs/kit': next
   '@typescript-eslint/eslint-plugin': ^5.10.1
   '@typescript-eslint/parser': ^5.10.1
+  '@urql/svelte': ^1.3.3
   autoprefixer: ^10.4.5
   eslint: ^7.32.0
   eslint-config-prettier: ^8.3.0
+  eslint-plugin-prettier: ^4.0.0
   eslint-plugin-svelte3: ^3.2.1
+  graphql: ^16.3.0
   postcss: ^8.4.12
   prettier: ^2.5.1
   prettier-plugin-svelte: ^2.5.0
@@ -19,6 +22,10 @@ specifiers:
   tslib: ^2.3.1
   typescript: ~4.6.2
 
+dependencies:
+  '@urql/svelte': 1.3.3_graphql@16.3.0+svelte@3.47.0
+  graphql: 16.3.0
+
 devDependencies:
   '@sveltejs/adapter-auto': 1.0.0-next.38
   '@sveltejs/kit': 1.0.0-next.320_svelte@3.47.0
@@ -27,6 +34,7 @@ devDependencies:
   autoprefixer: 10.4.5_postcss@8.4.12
   eslint: 7.32.0
   eslint-config-prettier: 8.5.0_eslint@7.32.0
+  eslint-plugin-prettier: 4.0.0_2544802fe0b6e1e28814bd742f96f471
   eslint-plugin-svelte3: 3.4.1_eslint@7.32.0+svelte@3.47.0
   postcss: 8.4.12
   prettier: 2.6.2
@@ -76,6 +84,14 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@graphql-typed-document-node/core/3.1.1_graphql@16.3.0:
+    resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      graphql: 16.3.0
+    dev: false
 
   /@humanwhocodes/config-array/0.5.0:
     resolution: {integrity: sha512-FagtKFz74XrTl7y6HCzQpwDfXP0yhxe9lHLD1UZxjvZIcbyRz8zTFF/yYNfSfzU414eDwZ1SrO0Qvtyf+wFMQg==}
@@ -339,6 +355,28 @@ packages:
       '@typescript-eslint/types': 5.20.0
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@urql/core/2.4.4_graphql@16.3.0:
+    resolution: {integrity: sha512-TD+OS7jG1Ts6QkpU0TZ85i/vu40r71GF0QQFDhnWFtgkHcNwnpkIwWBMa72AR3j2imBTPpk61e/xb39uM/t37A==}
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@graphql-typed-document-node/core': 3.1.1_graphql@16.3.0
+      graphql: 16.3.0
+      wonka: 4.0.15
+    dev: false
+
+  /@urql/svelte/1.3.3_graphql@16.3.0+svelte@3.47.0:
+    resolution: {integrity: sha512-5XbKcEfvMBYrQfuKjCzLgcT46XW4RoVTeOM5VPmAwk7mD709kgL8LXOSF/9A+fTLOByncMxKTp/9lkI8HKCBkA==}
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+      svelte: ^3.0.0
+    dependencies:
+      '@urql/core': 2.4.4_graphql@16.3.0
+      graphql: 16.3.0
+      svelte: 3.47.0
+      wonka: 4.0.15
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@7.4.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -886,6 +924,23 @@ packages:
       eslint: 7.32.0
     dev: true
 
+  /eslint-plugin-prettier/4.0.0_2544802fe0b6e1e28814bd742f96f471:
+    resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
+    engines: {node: '>=6.0.0'}
+    peerDependencies:
+      eslint: '>=7.28.0'
+      eslint-config-prettier: '*'
+      prettier: '>=2.0.0'
+    peerDependenciesMeta:
+      eslint-config-prettier:
+        optional: true
+    dependencies:
+      eslint: 7.32.0
+      eslint-config-prettier: 8.5.0_eslint@7.32.0
+      prettier: 2.6.2
+      prettier-linter-helpers: 1.0.0
+    dev: true
+
   /eslint-plugin-svelte3/3.4.1_eslint@7.32.0+svelte@3.47.0:
     resolution: {integrity: sha512-7p59WG8qV8L6wLdl4d/c3mdjkgVglQCdv5XOTk/iNPBKXuuV+Q0eFP5Wa6iJd/G2M1qR3BkLPEzaANOqKAZczw==}
     engines: {node: '>=10'}
@@ -1038,6 +1093,10 @@ packages:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
     dev: true
 
+  /fast-diff/1.2.0:
+    resolution: {integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==}
+    dev: true
+
   /fast-glob/3.2.11:
     resolution: {integrity: sha512-xrO3+1bxSo3ZVHAnqzyuewYT6aMFHRAd4Kcs92MAonjwQZLsK9d0SF1IyQ3k5PoirxTW0Oe/RqFgMQ6TcNE5Ew==}
     engines: {node: '>=8.6.0'}
@@ -1168,6 +1227,11 @@ packages:
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
     dev: true
+
+  /graphql/16.3.0:
+    resolution: {integrity: sha512-xm+ANmA16BzCT5pLjuXySbQVFwH3oJctUVdy81w1sV0vBU0KgDdBGtxQOUd5zqOBk/JayAFeG8Dlmeq74rjm/A==}
+    engines: {node: ^12.22.0 || ^14.16.0 || >=16.0.0}
+    dev: false
 
   /has-flag/3.0.0:
     resolution: {integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=}
@@ -1521,6 +1585,13 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier-linter-helpers/1.0.0:
+    resolution: {integrity: sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      fast-diff: 1.2.0
     dev: true
 
   /prettier-plugin-svelte/2.7.0_prettier@2.6.2+svelte@3.47.0:
@@ -1986,6 +2057,10 @@ packages:
     dependencies:
       isexe: 2.0.0
     dev: true
+
+  /wonka/4.0.15:
+    resolution: {integrity: sha512-U0IUQHKXXn6PFo9nqsHphVCE5m3IntqZNB9Jjn7EB1lrR7YTDY3YWgFvEvwniTzXSvOH/XMzAZaIfJF/LvHYXg==}
+    dev: false
 
   /word-wrap/1.2.3:
     resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
