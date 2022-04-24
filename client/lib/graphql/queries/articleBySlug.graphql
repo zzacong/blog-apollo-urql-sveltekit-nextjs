@@ -1,0 +1,8 @@
+query ArticleBySlug($slug: String!) {
+  articleBySlug(slug: $slug) {
+    slug
+    title
+    content
+    author
+  }
+}

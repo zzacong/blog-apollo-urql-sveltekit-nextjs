@@ -1,14 +1,42 @@
-import type { NextPage } from 'next'
-import Image from 'next/image'
+import type { GetStaticProps } from 'next'
 
-const Home: NextPage = () => {
+import Head from 'next/head'
+import { useQuery } from 'urql'
+
+import { ArticlesDocument } from '$lib/generated/graphql'
+import { client, ssrCache } from '$lib/urql'
+import Article from '$components/Article'
+
+export default function Home() {
+  const [result] = useQuery({ query: ArticlesDocument })
+  const { data, fetching, error } = result
+
   return (
-    <div>
-      <h1 className="text-center font-bold text-blue-500 text-5xl">
-        Hello Nextjs
-      </h1>
-    </div>
+    <>
+      <Head>
+        <title>Articles</title>
+      </Head>
+
+      {fetching ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>Oh no... {error.message}</p>
+      ) : (
+        data!.articles!.map(article => (
+          <Article key={article!.slug} article={article!} />
+        ))
+      )}
+    </>
   )
 }
 
-export default Home
+export const getStaticProps: GetStaticProps = async () => {
+  await client.query(ArticlesDocument).toPromise()
+
+  return {
+    props: {
+      urqlState: ssrCache.extractData(),
+    },
+    revalidate: 60,
+  }
+}
