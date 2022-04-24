@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "dev:server": "pnpm --dir server dev",
-    "dev:client": "pnpm --dir client dev --open",
+    "dev:client": "pnpm --dir client dev",
     "dev": "run-p --print-label dev:*",
-    "generate": "graphql-codegen",
+    "generate": "graphql-codegen -r dotenv/config",
     "generate:watch": "graphql-codegen --watch"
   },
   "keywords": [],
@@ -18,16 +18,13 @@
   "devDependencies": {
     "@graphql-codegen/cli": "2.6.2",
     "@graphql-codegen/introspection": "2.1.1",
-    "@graphql-codegen/named-operations-object": "^2.2.1",
+    "@graphql-codegen/typed-document-node": "^2.2.8",
     "@graphql-codegen/typescript": "2.4.8",
     "@graphql-codegen/typescript-operations": "2.3.5",
-    "@graphql-codegen/typescript-urql": "^3.5.7",
     "@graphql-codegen/urql-introspection": "2.1.1",
-    "@graphql-codegen/urql-svelte-operations-store": "^1.1.15",
-    "@urql/exchange-graphcache": "^4.3.6",
-    "cross-env": "^7.0.3",
+    "@graphql-typed-document-node/core": "^3.1.1",
+    "dotenv": "^16.0.0",
     "graphql": "^15",
-    "graphql-tag": "^2.12.6",
     "npm-run-all": "^4.1.5",
     "typescript": "^4.6.3"
   }

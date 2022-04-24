@@ -1,13 +1,13 @@
 overwrite: true
-schema: 'http://localhost:4000'
-documents: 'client/src/graphql/**/*.graphql'
-config:
-  withHooks: false
+schema: ${SCHEMA_PATH:http://localhost:4000}
+documents: 'client/lib/graphql/**/*.graphql'
 generates:
-  client/src/generated/graphql.ts:
+  client/lib/generated/graphql.ts:
     plugins:
       - 'typescript'
       - 'typescript-operations'
-      - 'typescript-urql'
-      - 'urql-introspection'
-      - 'urql-svelte-operations-store'
+      - 'typed-document-node'
+      # - 'urql-introspection'
+  # client/lib/generated/graphql.schema.json:
+  #   plugins:
+  #     - 'introspection'
