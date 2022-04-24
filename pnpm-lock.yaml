@@ -15,7 +15,6 @@ specifiers:
   graphql-tag: ^2.12.6
   npm-run-all: ^4.1.5
   typescript: ^4.6.3
-  wait-on: ^6.0.1
 
 devDependencies:
   '@graphql-codegen/cli': 2.6.2_graphql@15.8.0+typescript@4.6.3
@@ -32,7 +31,6 @@ devDependencies:
   graphql-tag: 2.12.6_graphql@15.8.0
   npm-run-all: 4.1.5
   typescript: 4.6.3
-  wait-on: 6.0.1
 
 packages:
 
@@ -1206,16 +1204,6 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /@hapi/hoek/9.2.1:
-    resolution: {integrity: sha512-gfta+H8aziZsm8pZa0vj04KO6biEiisppNgA1kbJvFrrWu9Vm7eaUEy76DIxsuTaWvti5fkJVhllWc6ZTE+Mdw==}
-    dev: true
-
-  /@hapi/topo/5.1.0:
-    resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
-    dependencies:
-      '@hapi/hoek': 9.2.1
-    dev: true
-
   /@iarna/toml/2.2.5:
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
     dev: true
@@ -1283,20 +1271,6 @@ packages:
     dependencies:
       any-observable: 0.3.0
       rxjs: 6.6.7
-    dev: true
-
-  /@sideway/address/4.1.4:
-    resolution: {integrity: sha512-7vwq+rOHVWjyXxVlR76Agnvhy8I9rpzjosTESvmhNeXOXdZZB15Fl+TI9x1SiHZH5Jv2wTGduSxFDIaq0m3DUw==}
-    dependencies:
-      '@hapi/hoek': 9.2.1
-    dev: true
-
-  /@sideway/formula/3.0.0:
-    resolution: {integrity: sha512-vHe7wZ4NOXVfkoRb8T5otiENVlT7a3IAiw7H5M2+GO+9CDgcVUUsX1zalAztCmwyOr2RUTGJdgB+ZvSVqmdHmg==}
-    dev: true
-
-  /@sideway/pinpoint/2.0.0:
-    resolution: {integrity: sha512-RNiOoTPkptFtSVzQevY/yWtZwf/RxyVnPy/OcA9HBM3MlGDnBEYL5B41H0MTn0Uec8Hi+2qUtTfG2WWZBmMejQ==}
     dev: true
 
   /@sindresorhus/is/0.14.0:
@@ -1471,14 +1445,6 @@ packages:
   /auto-bind/4.0.0:
     resolution: {integrity: sha512-Hdw8qdNiqdJ8LqT0iK0sVzkFbzg6fhnQqqfWhBDxcHZvU75+B+ayzTy8x+k5Ix0Y92XOhOUlx74ps+bA6BeYMQ==}
     engines: {node: '>=8'}
-    dev: true
-
-  /axios/0.25.0:
-    resolution: {integrity: sha512-cD8FOb0tRH3uuEe6+evtAbgJtfxr7ly3fQjYcMcuPlgkwVS9xboaVIpcDV+cYQe+yGykgwZCs1pzjntcGa6l5g==}
-    dependencies:
-      follow-redirects: 1.14.9
-    transitivePeerDependencies:
-      - debug
     dev: true
 
   /babel-plugin-dynamic-import-node/2.3.3:
@@ -2207,16 +2173,6 @@ packages:
       path-exists: 4.0.0
     dev: true
 
-  /follow-redirects/1.14.9:
-    resolution: {integrity: sha512-MQDfihBQYMcyy5dhRDJUHcw7lb2Pv/TuE6xP1vyraLukNDHKbDxDNaOE3NbCAdKQApno+GPRyo1YAp89yCjK4w==}
-    engines: {node: '>=4.0'}
-    peerDependencies:
-      debug: '*'
-    peerDependenciesMeta:
-      debug:
-        optional: true
-    dev: true
-
   /form-data-encoder/1.7.2:
     resolution: {integrity: sha512-qfqtYan3rxrnCk1VYaA4H+Ms9xdpPqvLZa6xmMgFvhO32x7/3J/ExcTd6qpxM0vH2GdMI+poehyBZvqfMTto8A==}
     dev: true
@@ -2800,16 +2756,6 @@ packages:
       ws: '*'
     dependencies:
       ws: 8.5.0
-    dev: true
-
-  /joi/17.6.0:
-    resolution: {integrity: sha512-OX5dG6DTbcr/kbMFj0KGYxuew69HPcAE3K/sZpEV2nP6e/j/C0HV+HNiBPCASxdx5T7DMoa0s8UeHWMnb6n2zw==}
-    dependencies:
-      '@hapi/hoek': 9.2.1
-      '@hapi/topo': 5.1.0
-      '@sideway/address': 4.1.4
-      '@sideway/formula': 3.0.0
-      '@sideway/pinpoint': 2.0.0
     dev: true
 
   /js-tokens/4.0.0:
@@ -4133,20 +4079,6 @@ packages:
   /value-or-promise/1.0.11:
     resolution: {integrity: sha512-41BrgH+dIbCFXClcSapVs5M6GkENd3gQOJpEfPDNa71LsUGMXDL0jMWpI/Rh7WhX+Aalfz2TTS3Zt5pUsbnhLg==}
     engines: {node: '>=12'}
-    dev: true
-
-  /wait-on/6.0.1:
-    resolution: {integrity: sha512-zht+KASY3usTY5u2LgaNqn/Cd8MukxLGjdcZxT2ns5QzDmTFc4XoWBgC+C/na+sMRZTuVygQoMYwdcVjHnYIVw==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-    dependencies:
-      axios: 0.25.0
-      joi: 17.6.0
-      lodash: 4.17.21
-      minimist: 1.2.6
-      rxjs: 7.5.5
-    transitivePeerDependencies:
-      - debug
     dev: true
 
   /wcwidth/1.0.1:
