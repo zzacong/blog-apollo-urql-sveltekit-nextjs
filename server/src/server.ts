@@ -2,7 +2,7 @@ import { ApolloServer, gql } from 'apollo-server'
 
 const typeDefs = gql`
   type Article {
-    slug: String
+    slug: String!
     title: String
     author: String
     content: String
@@ -10,6 +10,7 @@ const typeDefs = gql`
 
   type Query {
     articles: [Article]
+    articleBySlug(slug: String!): Article
   }
 `
 
@@ -31,6 +32,8 @@ const articles = [
 const resolvers = {
   Query: {
     articles: () => articles,
+    articleBySlug: (_: unknown, { slug }: { slug: string }) =>
+      articles.find(article => article.slug === slug),
   },
 }
 
